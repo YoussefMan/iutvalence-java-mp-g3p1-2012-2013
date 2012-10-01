@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.Pacman;
 
+// FIXME corriger le commentaire
 /**
  * Le personnage que le joueur contrôle. Il peut se déplacer à gauche ,
  *  à droite, en haut et en bas. Il peut être détruit par des fantômes(voir classe Fantome)
@@ -7,12 +8,24 @@ package fr.iutvalence.java.projets.Pacman;
  *
  */
 public class Pacman {
+	// FIXME écrire un commentaire
 	private int vitesse;
-	private int vie; 
+	
+	// FIXME écrire un commentaire
+	protected int vie; 
+	
+	// FIXME créer un type Position ou Coordonnees
+	// FIXME écrire un commentaire
 	private int placementxPM;
+	
+	// FIXME écrire un commentaire
 	private int placementyPM;
+	
+	// FIXME écrire un commentaire
+	// FIXME respecter les conventions d'écriture
 	private boolean Etat;
 	
+	// FIXME écrire un commentaire
 	public void mort(){
 		this.Etat = false;
 		this.placementxPM = 10;
@@ -20,10 +33,12 @@ public class Pacman {
 		this.vie = this.vie -1;
 	}
 	
+	// FIXME écrire un commentaire
 	public void vivant(){
 		this.Etat = true;
 	}
 	
+	// FIXME remplacer par un "vrai" constructeur
 	public void pacman(){
 		this.placementxPM = 10;
 		this.placementyPM = 2;
@@ -35,4 +50,3 @@ public class Pacman {
 
 }
 
-iutvalence-java-mp-g3p1-2012-2013

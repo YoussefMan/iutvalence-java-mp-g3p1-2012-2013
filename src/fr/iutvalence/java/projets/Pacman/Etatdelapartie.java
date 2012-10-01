@@ -1,41 +1,37 @@
 package fr.iutvalence.java.projets.Pacman;
 
 /**
- * timer : tout le 1/10 de seconde on verifie les etats
+ * 
  * @author elmanssy
- *
+ * 
  */
+// FIXME est ce vraiment de l'heritage ?
+public class Etatdelapartie extends Pacman {
 
-public class Etatdelapartie {
+	// FIXME écrire un commentaire
 	private double timer = 0.1;
+
+	// FIXME écrire un commentaire
 	private int nombredebilles;
-	private int score ;
-	
-	public void initPartie (){
+
+	// FIXME écrire un commentaire
+	private int score;
+
+	// FIXME écrire un commentaire
+	// FIXME remplacer par un "vrai" constructeur
+	public void initPartie() {
 		this.nombredebilles = 50;
 		this.score = 0;
 	}
-	
-	
-	public Etatdelapartie()
-    {
-		perso = new pacman();	 
-        // while(perso.vie > 0){
-        	 
-        	 
-         }
-        	 
-         
-        	 
-    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
+	// FIXME écrire un commentaire
+	public Etatdelapartie() {
+		Pacman perso = new Pacman();
+		while (perso.vie > 0) {
 
+		}
+
+	}
+
+	// FIXME autres méthodes ?
+}

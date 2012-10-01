@@ -15,20 +15,34 @@ package fr.iutvalence.java.projets.Pacman;
  */
 public class Fantome {
 	
+	// FIXME écrire un commentaire
 	private boolean etat; 
+	
+	// FIXME écrire un commentaire*
+	// FIXME définir une vraie constante
 	private static int nbFantome = 4;
+	
+	// FIXME écrire un commentaire
 	private int vitesse;
+	
+	// FIXME écrire un commentaire
 	private int x;
+	
+	// FIXME écrire un commentaire
 	private int y;
 	
-	
+	// FIXME écrire un commentaire
 	public void mange(){
 		this.etat=true;
 	}
+	
+	// FIXME écrire un commentaire
 	public void estmange(){
 		this.etat=false;
 	}
 	 
+	// FIXME écrire un commentaire
+	// FIXME remplacer par un vrai constructeur
 	public void fantome(){
 		this.vitesse = 4;
 		this.x = 10;
