@@ -1,9 +1,11 @@
 package fr.iutvalence.java.projets.Pacman;
 
-// FIXME compléter le commentaire
+
 /**
  * l'emplacement (0,0) se trouve en bas à gauche.
  * la grille fait en taille XMAX et YMAX.
+ * Cette grille permet de modéliser la zone de jeu, elle est remplit de 0 et de 1 représentant
+ * les zones jouables ou non jouables, elle est complété grace au constructeur Zone de base.
  * @author elmanssy
  *
  */

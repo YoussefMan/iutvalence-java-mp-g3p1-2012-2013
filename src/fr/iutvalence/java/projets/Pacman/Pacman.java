@@ -1,8 +1,9 @@
 package fr.iutvalence.java.projets.Pacman;
 
-// FIXME corriger le commentaire
+
 /**
- * Le personnage que le joueur contrôle. Il peut se déplacer à gauche ,
+ * on modélise ici le personnage principale de type pacman, il peut se déplacer soit de façon manuelle soit de façon automatique.
+ * Le personnage peut se déplacer à gauche ,
  *  à droite, en haut et en bas. Il peut être détruit par des fantômes(voir classe Fantome)
  * @author elmanssy
  *
@@ -26,6 +27,9 @@ public class Pacman {
 	private boolean Etat;
 	
 	// FIXME écrire un commentaire
+	/**
+	 * 
+	 */
 	public void mort(){
 		this.Etat = false;
 		this.placementxPM = 10;
