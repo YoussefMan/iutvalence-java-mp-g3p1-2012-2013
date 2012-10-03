@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.Pacman;
 
+// FIXME corriger le problèmes de caractères accentués, utiliser UTF-8 comme encodage dans les propriétés du projet
 /**
  * 
  * @author elmanssy
@@ -13,12 +14,18 @@ public class Fantome {
 	 */
 	private boolean etat; 
 	
+<<<<<<< HEAD
 
 	
 	/**
 	 * 
 	 */
 	
+=======
+	// FIXME écrire un commentaire
+	// FIXME définir une vraie constante
+	private static int nbFantome = 4;
+>>>>>>> branch 'master' of https://github.com/sebastienjean/iutvalence-java-mp-g3p1-2012-2013.git
 	
 	// FIXME écrire un commentaire
 	private int vitesse;

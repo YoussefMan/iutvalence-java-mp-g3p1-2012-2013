@@ -43,6 +43,7 @@ public class Pacman {
 	}
 	
 	// FIXME remplacer par un "vrai" constructeur
+	// FIXME placer le constructeur avant les méthodes
 	public void pacman(){
 		this.placementxPM = 10;
 		this.placementyPM = 2;
