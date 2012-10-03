@@ -11,8 +11,11 @@ public class Etatdelapartie {
 	private static final int NBFANTOME = 4;
 	// perso = new Pacman();
 
+	private final static int NBFANTOME = 4;
 	// FIXME écrire un commentaire
 	private double timer = 0.1;
+	
+	private int nbNiveau = 5;
 
 	// FIXME écrire un commentaire
 	private int nombredebilles;

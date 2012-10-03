@@ -1,11 +1,13 @@
 package fr.iutvalence.java.projets.Pacman;
 
-// FIXME corriger le problèmes de caractères accentués, utiliser UTF-8 comme encodage dans les propriétés du projet
 /**
- * 
+ * Cette classse  permet de définir ce qu'est un fantome, il est l'entité qui peut manger 
+ * le pacman mais qui peux être manger si il devient faible.Il est défini par 4 attributs, la position en x,y,
+ * son état et sa vitesse.
  * @author elmanssy
  *
  */
+
 public class Fantome {
 	
 	
@@ -14,44 +16,65 @@ public class Fantome {
 	 */
 	private boolean etat; 
 	
-<<<<<<< HEAD
 
 	
+	
 	/**
-	 * 
+	 * Cette variable définit la vitesse du fantome.
 	 */
-	
-=======
-	// FIXME écrire un commentaire
-	// FIXME définir une vraie constante
-	private static int nbFantome = 4;
->>>>>>> branch 'master' of https://github.com/sebastienjean/iutvalence-java-mp-g3p1-2012-2013.git
-	
-	// FIXME écrire un commentaire
 	private int vitesse;
 	
-	// FIXME écrire un commentaire
-	private int x;
+	/**
+	 * C'est la vitesse par défault du fantome
+	 */
+	private final static int VITESSEINIT = 4;
 	
-	// FIXME écrire un commentaire
-	private int y;
+	/**
+	 * C'est la position en abscisse par défault du fantome
+	 */
+	private final static int XFINIT = 10;
 	
-	// FIXME écrire un commentaire
+	/**
+	 * C'est la position en ordonnée par défault du fantome
+	 */
+	private final static int YFINIT = 6;
+	
+	
+	/**
+	 * Cette variable définit la position en abscisse du fantôme dans la grille.
+	 */
+	private int xF;
+	
+	
+	/**
+	 * Cette variable définit la position en ordonnée du fantôme dans la grille.
+	 */
+	private int yF;
+	
+	
+	/**
+	 * Cette methode permet de modifier l'état du fantome et de le mettre en état de prédateur.
+	 */
 	public void mange(){
 		this.etat=true;
 	}
 	
-	// FIXME écrire un commentaire
+	
+	/**
+	 * Cette methode permet de modifier l'état du fantome et de le mettre en état de victime.
+	 */
 	public void estmange(){
 		this.etat=false;
 	}
 	 
-	// FIXME écrire un commentaire
-	// FIXME remplacer par un vrai constructeur
+	/**
+	 * Ce constructeur permet d'initialiser un fantome, par sa vitesse sa position en abscisse,ordonnée
+	 * et son état de base est prédateur.
+	 */ 
 	public Fantome(){
-		this.vitesse = 4;
-		this.x = 10;
-		this.y = 6;
+		this.vitesse = VITESSEINIT;
+		this.xF =  XFINIT;
+		this.yF = YFINIT;
 		this.etat = true;
 	}
 	
