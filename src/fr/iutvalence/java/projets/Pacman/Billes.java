@@ -21,7 +21,7 @@ public class Billes {
 	// FIXME écrire un commentaire
 	// FIXME respecter les conventions d'écriture
 	private boolean Etat;
-	
+	//aa
 	// FIXME écrire un commentaire
 	public void estmangee(){
 		this.Etat = false;
