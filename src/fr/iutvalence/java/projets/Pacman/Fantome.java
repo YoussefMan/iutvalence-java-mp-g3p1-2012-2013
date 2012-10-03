@@ -9,13 +9,16 @@ public class Fantome {
 	
 	
 	/**
-	 * 
+	 * Cette variable permet de savoir si le fantome peut se faire manger ou pas.
 	 */
 	private boolean etat; 
 	
-	// FIXME écrire un commentaire*
-	// FIXME définir une vraie constante
-	private static final int NBFANTOME = 4;
+
+	
+	/**
+	 * 
+	 */
+	
 	
 	// FIXME écrire un commentaire
 	private int vitesse;
