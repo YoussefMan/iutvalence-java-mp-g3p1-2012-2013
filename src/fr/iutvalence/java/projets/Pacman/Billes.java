@@ -1,4 +1,6 @@
 package fr.iutvalence.java.projets.Pacman;
+
+// FIXME corriger le commentaire
 /**
  * bille : ce que doit manger le pacman pour augementer le score;
  * carré : change l'état des fantome;
@@ -17,6 +19,7 @@ public class Billes {
 	private int scoreBille;
 	
 	// FIXME écrire un commentaire
+	// FIXME respecter les conventions d'écriture
 	private boolean Etat;
 	
 	// FIXME écrire un commentaire
@@ -31,6 +34,7 @@ public class Billes {
 	
 	// FIXME écrire un commentaire
 	// FIXME remplacer par un vrai constructeur
+	// FIXME placer le constructeur avant les méthodes
 	public void Billes(){
 		this.Etat = true;
 		this.scoreBille = 10;

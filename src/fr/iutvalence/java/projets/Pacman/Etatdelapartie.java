@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.Pacman;
 
+// FIXME compléter le commentaire
 /**
  * 
  * @author elmanssy

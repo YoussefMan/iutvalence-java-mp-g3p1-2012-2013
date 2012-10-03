@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.Pacman;
 
+// FIXME corriger le problèmes de caractères accentués, utiliser UTF-8 comme encodage dans les propriétés du projet
 /**
  * Les fantÃ´mes possedent 2 etat celui de prÃ©dateur et celui de victime.
  * state = Ã©tat du fantome.
@@ -18,7 +19,7 @@ public class Fantome {
 	// FIXME écrire un commentaire
 	private boolean etat; 
 	
-	// FIXME écrire un commentaire*
+	// FIXME écrire un commentaire
 	// FIXME définir une vraie constante
 	private static int nbFantome = 4;
 	
