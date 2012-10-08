@@ -1,8 +1,8 @@
 package fr.iutvalence.java.projets.Pacman;
 
 /**
- * Cette classse  permet de définir ce qu'est un fantome, il est l'entité qui peut manger 
- * le pacman mais qui peux être manger si il devient faible.Il est défini par 4 attributs, la position en x,y,
+ * Cette classse définit un fantome. Le fantôme est l'entité qui peut manger 
+ * le pacman mais qui peux être mangé s'il devient faible. Il est défini par sa position,
  * son état et sa vitesse.
  * @author elmanssy
  *
@@ -10,56 +10,53 @@ package fr.iutvalence.java.projets.Pacman;
 
 public class Fantome {
 	
-	
+	// FIXME préciser (c'est ambigü) quelle valeur de l'état correspond à "je peux me faire manger"
 	/**
-	 * Cette variable permet de savoir si le fantome peut se faire manger ou pas.
+	 * Permet de savoir si le fantome peut se faire manger ou pas.
 	 */
 	private boolean etat; 
 	
-
-	
-	
 	/**
-	 * Cette variable définit la vitesse du fantome.
+	 * Vitesse du fantome.
 	 */
 	private int vitesse;
 	
 	/**
-	 * C'est la vitesse par défault du fantome
+	 * Vitesse par défaut du fantome
 	 */
 	private final static int VITESSEINIT = 4;
 	
 	/**
-	 * C'est la position en abscisse par défault du fantome
+	 * Position en abscisse par défaut du fantome
 	 */
 	private final static int XFINIT = 10;
 	
 	/**
-	 * C'est la position en ordonnée par défault du fantome
+	 * Position en ordonnée par défaut du fantome
 	 */
 	private final static int YFINIT = 6;
 	
-	
+	// FIXME regrouper les 2 composantes x et y dans un seul objet (à définir)
 	/**
-	 * Cette variable définit la position en abscisse du fantôme dans la grille.
+	 * Position en abscisse du fantôme dans la grille.
 	 */
 	private int xF;
 	
 	
 	/**
-	 * Cette variable définit la position en ordonnée du fantôme dans la grille.
+	 * Position en ordonnée du fantôme dans la grille.
 	 */
 	private int yF;
 	
 	
 	/**
-	 * Cette methode permet de modifier l'état du fantome et de le mettre en état de prédateur.
+	 * Mettre le fantôme en état de prédateur.
 	 */
 	public void mange(){
 		this.etat=true;
 	}
 	
-	
+	// FIXME quand un fantôme est mangé, il disparait pour reapparaitre plus tard ? (à discuter en séance)
 	/**
 	 * Cette methode permet de modifier l'état du fantome et de le mettre en état de victime.
 	 */
@@ -67,6 +64,8 @@ public class Fantome {
 		this.etat=false;
 	}
 	 
+	// FIXME corriger le commentaire (indiquer les caractéristiques du fantome créé)
+	// FIXME déplacer le constructeur avant les méthodes
 	/**
 	 * Ce constructeur permet d'initialiser un fantome, par sa vitesse sa position en abscisse,ordonnée
 	 * et son état de base est prédateur.

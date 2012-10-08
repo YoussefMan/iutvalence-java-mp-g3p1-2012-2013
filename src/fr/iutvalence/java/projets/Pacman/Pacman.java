@@ -2,45 +2,49 @@ package fr.iutvalence.java.projets.Pacman;
 
 
 /**
- * On modélise ici le personnage principale de type pacman, il peut se déplacer soit de façon manuelle soit de façon automatique.
- * Le personnage peut se déplacer à gauche ,
- *  à droite, en haut et en bas. Il peut être détruit par des fantômes(voir classe Fantome)
+ * On modélise ici le personnage principal (Pacman). Pacman peut se déplacer à gauche ,
+ *  à droite, en haut et en bas. Il peut être détruit par des fantômes.
  * @author elmanssy
  *
  */
 public class Pacman {
 	
 	
+	// FIXME (FIXED) rester synthétique, réduire le commentaire 
 	/**
-	 * Ici ce paramêtre permet de modifier et de définir la vitesse du pacman.
+	 * Vitesse du pacman.
 	 */
+	// FIXME la vitesse change t'elle en cours de partie
 	private int vitesse;
 	
 	
+	// FIXME détailler le commentaire, c'est très ambigü
+	// FIXME pourquoi prtected ? (à discute en séance)
 	/**
 	 * Ici cette attribut permet de définir la vie initiale du pacman. 
 	 */
 	protected int vie; 
-	
-	
-	
 	 
+	// FIXME préciser à quelle valeur booléenne correspond l'état "en vie" 
 	/**
-	 * Cette variable permet de savoir si le pacman est mort ou pas.
+	 * Etat du pacman (mort ou pas).
 	 */
 	private boolean etat;
 	
+	
+	
 	/**
-	 * C'est la position en abscisse par défault du pacman
+	 * Position en abscisse par défaut du pacman
 	 */
 	private final static int XPINIT = 10;
 	
 	/**
-	 * C'est la position en ordonnée par défault du pacman
+	 * Position en ordonnée par défaut du pacman
 	 */
 	private final static int YPINIT = 2;
 	
 
+	// FIXME écrire le commentaire différemment (la première phrase est ambigüe-
 	/**
 	 * Cette méthode permet de définir l'état mort du pacman, elle fait trois actions, 
 	 * elle le met en état mort, puis elle le replace au centre de la grille puis elle décremente
