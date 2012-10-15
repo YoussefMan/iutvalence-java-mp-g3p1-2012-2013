@@ -12,7 +12,21 @@ package fr.iutvalence.java.projets.Pacman;
 // FIXME(FIXED) respecter les conventions d'écriture
 public class ZoneDeJeux {
 
+	/**
+	 * Cet attribut permet de définir le nombre de point que rapporte une bille
+	 */
+	// FIXME(FIXED) le score associé à une bille chage t'il durant la partie ?
+	public final static int VALEURSCOREBILLE = 10;
 	
+	/**
+	 * Cet attribut permet de définir le nombre de point que rapporte une gomme on gérera
+	 * le fait que les fontôme change d'état quand une gomme est manger dans l'état de la partie.
+	 */
+	// FIXME(FIXED) le score associé à une bille chage t'il durant la partie ?
+	public final static int VALEURSCOREGOMME = 50;
+	
+	
+
 	// FIXME(FIXED) définir une "vraie" constante 
 	// FIXME(FIXED) respecter les conventions d'écriture
 	/**
@@ -70,7 +84,7 @@ public class ZoneDeJeux {
 		
 		while((x<XMAX))//On rempit toute la grille de zone jouable
 			while((y<YMAX))
-				grille[x][y] = 1;
+				grille[x][y] = 1 +  VALEURSCOREBILLE;
 		    	y = y + 1;
 		    x = x + 1;
 		    
@@ -122,5 +136,18 @@ public class ZoneDeJeux {
 			
 			x = 0;
 			y = 0;
+			
+			grille[1][1] = 0; // On met en place la valeur des gommes.
+			grille[1][1] = 1 + VALEURSCOREGOMME;
+			
+			grille[19][1] = 0; // On met en place la valeur des gommes.
+			grille[19][1] = 1 + VALEURSCOREGOMME;
+			
+			grille[19][9] = 0; // On met en place la valeur des gommes.
+			grille[19][9] = 1 + VALEURSCOREGOMME;
+			
+			grille[1][9] = 0; // On met en place la valeur des gommes.
+			grille[1][9] = 1 + VALEURSCOREGOMME;
+			
 	}
 }
