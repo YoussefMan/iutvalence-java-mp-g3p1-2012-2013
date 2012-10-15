@@ -12,46 +12,57 @@ public class Bille {
 	/**
 	 * Cet attribut permet de définir le nombre de point que rapporte une bille
 	 */
-	// FIXME le score associé à une bille chage t'il durant la partie ?
-	private int scoreBille;
+	// FIXME(FIXED) le score associé à une bille chage t'il durant la partie ?
+	public final static int VALEURSCOREBILLE = 10;
 	
 	/**
 	 * L'état de la bille (mangée ou pas) 
 	 */
-	// FIXME respecter les conventions d'écriture
-	private boolean Etat;
+	// FIXME(FIXED) respecter les conventions d'écriture
+	private boolean etat;
 	
-	
-	// FIXME déplacer les billes après le(s) constructeur(s)
-	// FIXME le commentaire ne correspond pas à l'implémentation de la méthode
 	/**
-	 * Ici on cherche à savoir si une bille est mangée ou pas, l'attribut estmangee permet 
-	 * de savoir si on est à false de dire que la bille est mangée
+	 * La varible qui reçoit le score de la bille
 	 */
+	private int scorebille;
+
 	
-	public void estmangee(){
-		this.Etat = false;
-	}
-	
-	// FIXME corriger le commentaire (ne pas indiquer à quelle condition on appelle la méthode mais pltot à quoi elle sert)
-	/**
-	 * Si la bille n'est pas encore mangée on met l'état de la bille à true il sera modifié dans la gestion de partie.
-	 */
-	public void nonmangee(){
-		this.Etat = true;
-	}
-	
-	
-	// FIXME corriger le commentaire (donner des informations sur l'état de la bille créée, sans mentionner explicitement les attributs)
+	// FIXME(FIXED) corriger le commentaire (donner des informations sur l'état de la bille créée, sans mentionner explicitement les attributs)
 	/**
 	 * initialisation d'une bille avecn ce constructeur que donne à la bille deux attributs de base,
-	 * l'état de la bille à true (Nonmangee) et scorebille à 10
+	 * l'état de la bille (si elle est encore presente ou pas) et le score que raporte la bille qui prend pour valeur 
+	 * VALEURSCOREBILLE
 	 *  
 	 */
 	public Bille(){
-		this.Etat = true;
-		// FIXME définir la valeur par défaut sous la forme d'une constante
-		this.scoreBille = 10;
+		this.etat = true;
+		// FIXME(FIXED) définir la valeur par défaut sous la forme d'une constante
+		this.scorebille = VALEURSCOREBILLE;
 	}
 
+	// FIXME(FIXED) déplacer les méthodes après le(s) constructeur(s)
+		// FIXME(FIXED) le commentaire ne correspond pas à l'implémentation de la méthode
+		/**
+		 * On change l'état de la bille quand elle est mangée.
+		 */
+		
+		public void estmangee(){
+			this.etat = false;
+		}
+		
+		
+		
+	// FIXME(FIXED) corriger le commentaire (ne pas indiquer à quelle condition on appelle la méthode mais pltot à quoi elle sert)
+		/**
+		 * On initialise l'état de la bille en debut de partie
+		 */
+		public void nonmangee(){
+			this.etat = true;
+		}
+			
+
+		
+	
+	
+	
 }

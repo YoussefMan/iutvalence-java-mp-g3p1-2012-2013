@@ -3,43 +3,52 @@ package fr.iutvalence.java.projets.Pacman;
 /**
  * @author elmanssy
  *	
- * Cette classe permet de placer le pacman avec ce couple x,y en abscisse ordonnée sur la grille.
+ * Cette classe permet de placer le pacman avec un couple x,y en abscisse ordonnée sur la grille.
  **/
 public class Position {
 	
 
-	// FIXME écrire le commentaire proprement 
+	// FIXME(FIXED) écrire le commentaire proprement 
  /**
- * Ici nous définissons le placement en x de nos differents personnages.
+ * Placement en abscisse de l'objet.
  */
-public int placementxPM;
+public int placementx;
 
-// FIXME écrire le commentaire proprement
+// FIXME(FIXED) écrire le commentaire proprement
 /**
- * Ici nous définissons le placement en y de nos differents personnages.
+ * Placement en ordonnée de l'objet.
  */
-public int placementyPM;
+public int placementy;
 
-
-// FIXME écrire le commentaire
-public int getX(){
-	return  placementxPM;
-}
-
-// FIXME écrire le commentaire
-public int getY(){
-	return  placementyPM;
-}
-
-// FIXME déplacer la méthode après le constructeur
-public int comparePosition(Position P1,Position P2);{
-	if
-}
-
-// FIXME écrire un commentaire
+//FIXME(FIXED) écrire un commentaire
+/**
+ * On initilaise la position de l'objet avec une valeur d'abscisse et d'ordonnée propre à chaque objet (x et y).
+ * @param x Le x représente la valeur d'abscisse pour la position de l'objet
+ * @param y Le y représente la valeur d'ordonnée pour la position de l'objet
+ */
 public Position(int x, int y){
-	// FIXME compléter
+	this.placementx = x;
+	this.placementy = y;
+	// FIXME(FIXED) compléter
 }
-	
+
+// FIXME(FIXED) écrire le commentaire
+/**
+ * Cette méthode renvoit la valeur de x.
+ */
+public int getX(){
+	return  placementx;
+}
+
+// FIXME(FIXED) écrire le commentaire
+/**
+ * Cette méthode renvoit la valeur de y.
+ */
+public int getY(){
+	return  placementy;
+}
+
+
+
 
 }

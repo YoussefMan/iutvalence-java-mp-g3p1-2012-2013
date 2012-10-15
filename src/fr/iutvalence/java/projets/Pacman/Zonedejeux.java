@@ -9,51 +9,78 @@ package fr.iutvalence.java.projets.Pacman;
  * @author elmanssy
  *
  */
-// FIXME respecter les conventions d'écriture
-public class Zonedejeux {
+// FIXME(FIXED) respecter les conventions d'écriture
+public class ZoneDeJeux {
 
 	
-	// FIXME définir une "vraie" constante
-	// FIXME respecter les conventions d'écriture
-	private static int zonejouable = 1;
+	// FIXME(FIXED) définir une "vraie" constante 
+	// FIXME(FIXED) respecter les conventions d'écriture
+	/**
+	 * On définit à 1 les endroits où les déplacements d'objets sont autorisés
+	 */
+	public final static int ZONEJOUABLE = 1;
 
-	// FIXME définir une "vraie" constante
-	// FIXME respecter les conventions d'écriture
-	private static int zonenonjouable = 0;
+	// FIXME(FIXED) définir une "vraie" constante
+	// FIXME(FIXED) respecter les conventions d'écriture
+	/**
+	 * On définit à 0 les endroits où les déplacements d'objets sont non autorisés
+	 */
+	public final static int ZONENONJOUABLE = 0;
 	
-	// FIXME écrire un commentaire
+	// FIXME(FIXED) écrire un commentaire
+	/**
+	 * Le contenue de la grille. (Chaque case peut contenir une bille et est une zone jouable ou non jouable).
+	 */
 	private int grille[][] ;
 	
-	// FIXME respecter les conventions d'écriture
-	private static final int Xmax = 20;
-	// FIXME respecter les conventions d'écriture
-	private static final int Ymax = 10;
+	// FIXME(FIXED) respecter les conventions d'écriture
+	/**
+	 * On définit à 20 la taille maximum de la grille en abscisse.
+	 */
+	private static final int XMAX = 20;
+	// FIXME(FIXED) respecter les conventions d'écriture
+	/** 
+	 * la taille maximum de la grille en ordonnée.
+	 * 	 */
+	private static final int YMAX = 10;
 	
-	// FIXME écrire un commentaire
-	// FIXME initialisation des attributs dans le constructeur
-	private int x = 0;
+	// FIXME(FIXED) écrire un commentaire
+	// FIXME(FIXED) initialisation des attributs dans le constructeur
+	/**
+	 * represente l'abscisse sur la zone de jeu 
+	 */
+	private int x;
 	
-	// FIXME écrire un commentaire
-	// FIXME initialisation des attributs dans le constructeur
-	private int y = 0;
+	// FIXME(FIXED) écrire un commentaire
+	// FIXME(FIXED) initialisation des attributs dans le constructeur
+	/**
+	 * represente l'ordonée sur la zone de jeu 
+	 */
+	private int y;
 	
-	// FIXME écrire un commentaire
-	// FIXME remplacer par un "vrai" constructeur
-	public void ZoneDeBase(){
+	// FIXME(FIXED) écrire un commentaire
+	// FIXME(FIXED) remplacer par un "vrai" constructeur
+	/**
+	 * On initialise une zone de jeux de taille XMAX en abscisse et YMAX en ordonnée
+	 * avec des zones de jeux jouable et non jouable 
+	 */
+	public ZoneDeJeux(){
+		x=0;
+		y=0;
 		
-		while((x<Xmax))//On rempit toute la grille de zone jouable
-			while((y<Ymax))
+		while((x<XMAX))//On rempit toute la grille de zone jouable
+			while((y<YMAX))
 				grille[x][y] = 1;
 		    	y = y + 1;
 		    x = x + 1;
 		    
-		while(x < Xmax) // On remplit en zone non jouable la première ligne et la dernière
+		while(x < XMAX) // On remplit en zone non jouable la première ligne et la dernière
 			grille[x][1] = 0;
-			grille[x][Ymax] = 0; 
+			grille[x][YMAX] = 0; 
 			x = x + 1;
 		
-		while(y < Ymax) // On remplit en zone non jouable la première ligne et la dernière
-			grille[Xmax][y] = 0;
+		while(y < YMAX) // On remplit en zone non jouable la première ligne et la dernière
+			grille[XMAX][y] = 0;
 			grille[1][y] = 0; 
 			y = y + 1;
 			

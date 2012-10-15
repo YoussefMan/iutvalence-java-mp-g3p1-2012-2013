@@ -9,29 +9,15 @@ package fr.iutvalence.java.projets.Pacman;
  */
 public class Pacman {
 	
-	
-	// FIXME (FIXED) rester synthétique, réduire le commentaire 
 	/**
-	 * Vitesse du pacman.
+	 * Vitesse initiale du pacman.
 	 */
-	// FIXME la vitesse change t'elle en cours de partie
-	private int vitesse;
+	private final static int VITINIT = 10;
 	
-	
-	// FIXME détailler le commentaire, c'est très ambigü
-	// FIXME pourquoi prtected ? (à discute en séance)
 	/**
-	 * Ici cette attribut permet de définir la vie initiale du pacman. 
+	 * Nombre de vie initiale du pacman.
 	 */
-	protected int vie; 
-	 
-	// FIXME préciser à quelle valeur booléenne correspond l'état "en vie" 
-	/**
-	 * Etat du pacman (mort ou pas).
-	 */
-	private boolean etat;
-	
-	
+	private final static int NBVIEINIT = 3;
 	
 	/**
 	 * Position en abscisse par défaut du pacman
@@ -43,39 +29,73 @@ public class Pacman {
 	 */
 	private final static int YPINIT = 2;
 	
-
-	// FIXME écrire le commentaire différemment (la première phrase est ambigüe-
+	// FIXME (FIXED) rester synthétique, réduire le commentaire 
 	/**
-	 * Cette méthode permet de définir l'état mort du pacman, elle fait trois actions, 
-	 * elle le met en état mort, puis elle le replace au centre de la grille puis elle décremente
-	 * la variable vie.
+	 * attribut Vitesse du pacman qui reçoit la vitesse initiale du pacman.
+	 */
+	// FIXME(Fixed) la vitesse change t'elle en cours de partie
+	private int vitesse;
+	
+	
+	// FIXME(FIXED)détailler le commentaire, c'est très ambigü
+	// FIXME(FIXED) pourquoi prtected ? (à discute en séance)
+	/**
+	 * Le nombre de vie du pacman. 
+	 */
+	private int nbVies; 
+	 
+	// FIXME(FIXED)préciser à quelle valeur booléenne correspond l'état "en vie" 
+	/**
+	 * Etat du pacman (mort ou pas). True : Le pacman est en vie.
+	 * False : le pacman est mort.
+	 */
+	private boolean etat;
+	
+	
+	
+	
+	/**
+	 * Définit le placement du pacman.
+	 */
+	private Position PlacementPM; 
+	
+	// FIXME(FIXED) remplacer par un "vrai" constructeur
+	// FIXME(FIXED) placer le constructeur avant les méthodes
+	/**
+	 *  Ce constructeur permet d'initialiser le pacman, par sa vitesse sa position en abscisse,ordonnée
+	 *  et son état de base est vivant mais il peut etre victime des autres fantomes.
+	 * Le Pacman créé dispose: -d'une vitesse légerment supérieur à celle des fantomes
+	 * 							-Une position de base sur le plateau de jeu.
+	 * 							-et un etat initiliser tout d'abord "peut manger des billes).
+	 */
+	public Pacman(){
+		this.PlacementPM = new Position(XPINIT,YPINIT);
+	    this.vitesse = VITINIT;
+		this.nbVies = NBVIEINIT;
+		this.etat = true;
+	}
+	
+
+
+	// FIXME(FIXED) écrire le commentaire différemment (la première phrase est ambigüe-
+	/**
+	 * On définit les actions à faire quand le pacman est mort : 
+	 * 1) L'état devient false ("est mort")
+	 * 2) On le replace au centre de la grille
+	 * 3) Décremente le nombre de vie 
 	 */
 	public void mort(){
 		this.etat = false;
-		this.placementxPM = XPINIT;
-		this.placementyPM = YPINIT;
-		this.vie = this.vie -1;
+		this.PlacementPM = new Position(XPINIT,YPINIT);
+		this.nbVies = this.nbVies -1;
 	}
 	
-	// FIXME écrire un commentaire
+	// FIXME(FIXED) écrire un commentaire
 	/**
-	 * 
+	 * Le pacman peut se déplacer et manger des billes
 	 */
 	public void vivant(){
-		this.Etat = true;
-	}
-	
-	// FIXME remplacer par un "vrai" constructeur
-	// FIXME placer le constructeur avant les méthodes
-	/**
-	 * 
-	 */
-	public void pacman(){
-		this.placementxPM =10; 
-		this.placementyPM = 2;
-		this.vitesse = 10;
-		this.vie = 3;
-		this.Etat = true;
+		this.etat = true;
 	}
 	
 
