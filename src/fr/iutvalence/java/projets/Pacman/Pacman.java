@@ -12,39 +12,39 @@ public class Pacman {
 	/**
 	 * Vitesse initiale du pacman.
 	 */
+	// FIXME respecter les conventions d'écriture
 	private final static int VITINIT = 10;
 	
 	/**
 	 * Nombre de vie initiale du pacman.
 	 */
+	// FIXME respecter les conventions d'écriture
 	private final static int NBVIEINIT = 3;
 	
 	/**
 	 * Position en abscisse par défaut du pacman
 	 */
+	// FIXME respecter les conventions d'écriture
 	private final static int XPINIT = 10;
 	
 	/**
 	 * Position en ordonnée par défaut du pacman
 	 */
+	// FIXME respecter les conventions d'écriture
 	private final static int YPINIT = 2;
-	
-	// FIXME (FIXED) rester synthétique, réduire le commentaire 
+	 
 	/**
-	 * attribut Vitesse du pacman qui reçoit la vitesse initiale du pacman.
+	 * vitesse du pacman.
 	 */
-	// FIXME(Fixed) la vitesse change t'elle en cours de partie
+	// FIXME la vitesse change t'elle en cours de partie ?
 	private int vitesse;
 	
 	
-	// FIXME(FIXED)détailler le commentaire, c'est très ambigü
-	// FIXME(FIXED) pourquoi prtected ? (à discute en séance)
 	/**
-	 * Le nombre de vie du pacman. 
+	 * Le nombre de vies du pacman. 
 	 */
 	private int nbVies; 
 	 
-	// FIXME(FIXED)préciser à quelle valeur booléenne correspond l'état "en vie" 
 	/**
 	 * Etat du pacman (mort ou pas). True : Le pacman est en vie.
 	 * False : le pacman est mort.
@@ -53,14 +53,13 @@ public class Pacman {
 	
 	
 	
-	
 	/**
 	 * Définit le placement du pacman.
 	 */
+	// FIXME respecter les conventions d'écriture
 	private Position PlacementPM; 
 	
-	// FIXME(FIXED) remplacer par un "vrai" constructeur
-	// FIXME(FIXED) placer le constructeur avant les méthodes
+	
 	/**
 	 *  Ce constructeur permet d'initialiser le pacman, par sa vitesse sa position en abscisse,ordonnée
 	 *  et son état de base est vivant mais il peut etre victime des autres fantomes.
@@ -77,7 +76,6 @@ public class Pacman {
 	
 
 
-	// FIXME(FIXED) écrire le commentaire différemment (la première phrase est ambigüe-
 	/**
 	 * On définit les actions à faire quand le pacman est mort : 
 	 * 1) L'état devient false ("est mort")
@@ -90,7 +88,6 @@ public class Pacman {
 		this.nbVies = this.nbVies -1;
 	}
 	
-	// FIXME(FIXED) écrire un commentaire
 	/**
 	 * Le pacman peut se déplacer et manger des billes
 	 */

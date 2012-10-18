@@ -10,7 +10,6 @@ package fr.iutvalence.java.projets.Pacman;
 
 public class Fantome {
 	
-	// FIXME(FIXED) préciser (c'est ambigü) quelle valeur de l'état correspond à "je peux me faire manger"
 	/**
 	 * Permet de savoir si le fantome peut se faire manger ou pas. 
 	 * Si l'état est à false il peut se faire manger par le pacman sinon
@@ -24,30 +23,36 @@ public class Fantome {
 	 */
 	private int vitesse;
 	
+	
+	// FIXME déplacer les définitions des constantes avant celles des attributs
+	
+	
 	/**
 	 * Vitesse par défaut du fantome
 	 */
+	// FIXME respecter les conventions d'écriture
 	private final static int VITESSEINIT = 4;
 	
 	/**
 	 * Position en abscisse par défaut du fantome
 	 */
+	// FIXME respecter les conventions d'écriture
 	private final static int XFINIT = 10;
 	
 	/**
 	 * Position en ordonnée par défaut du fantome
 	 */
+	// FIXME respecter les conventions d'écriture
 	private final static int YFINIT = 6;
 	
-	// FIXME(FIXED) regrouper les 2 composantes x et y dans un seul objet (à définir)
+
 	/**
 	 * Définit le placement du fantôme.
 	 */
+	// FIXME respecter les conventions d'écriture
 	Position PlacementF;
 	
 	 
-	// FIXME(FIXED) corriger le commentaire (indiquer les caractéristiques du fantome créé)
-	// FIXME(FIXED) déplacer le constructeur avant les méthodes
 	/**
 	 * Ce constructeur permet d'initialiser un fantome, par sa vitesse sa position en abscisse,ordonnée
 	 * et son état de base est prédateur.
@@ -68,8 +73,6 @@ public class Fantome {
 	public void mange(){
 		this.etat=true;
 	}
-	
-	// FIXME(FIXED) quand un fantôme est mangé, il disparait pour reapparaitre plus tard ? (à discuter en séance)
 	
 	/**
 	 * Cette methode permet de modifier l'état du fantome et de le mettre en état de victime.
