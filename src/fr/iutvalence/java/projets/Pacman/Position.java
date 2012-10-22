@@ -11,14 +11,14 @@ public class Position {
  /**
  * Placement en abscisse de l'objet.
  */
-	// FIXME définir l'attribut private
-public int placementx;
+	// FIXME(FIXED) définir l'attribut private
+private int placementx;
 
 /**
  * Placement en ordonnée de l'objet.
  */
-// FIXME définir l'attribut private
-public int placementy;
+// FIXME(FIXED) définir l'attribut private
+private int placementy;
 
 /**
  * On initialise la position de l'objet avec une valeur d'abscisse et d'ordonnée propre à chaque objet (x et y).
@@ -45,8 +45,25 @@ public int getY(){
 }
 
 
-// FIXME redéfinir toString
-// FIXME redéfinir equals et hashCode
+// FIXME(FIXED) redéfinir toString
+public String tostring(){
+	return "(" + this.placementx + "," + this.placementy +")";
+}
+// FIXME(FIXED) redéfinir equals et hashCode
+public boolean equals(Object o){
+	if(o == null) 
+		return false;
+	if(o == this)
+		return true;
+	if(!(o instanceof Position))
+		return false;
+	Position temp = (Position) o;
+	return (this.placementx == temp.placementx) && (this.placementy == temp.placementy);
+} 
+
+public int hashCode(){
+	return this.placementx + this.placementy ;
+}
 
 
 }

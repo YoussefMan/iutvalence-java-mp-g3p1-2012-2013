@@ -10,6 +10,26 @@ package fr.iutvalence.java.projets.Pacman;
 
 public class Fantome {
 	
+	
+	/**
+	 * Vitesse par défaut du fantome
+	 */
+	// FIXME(FIXED) respecter les conventions d'écriture
+	public final static int VITESSEINIT = 4;
+	
+	/**
+	 * Position en abscisse par défaut du fantome
+	 */
+	// FIXME(FIXED) respecter les conventions d'écriture
+	public final static int XFINIT = 10;
+	
+	/**
+	 * Position en ordonnée par défaut du fantome
+	 */
+	// FIXME(FIXED) respecter les conventions d'écriture
+	public final static int YFINIT = 6;
+	
+
 	/**
 	 * Permet de savoir si le fantome peut se faire manger ou pas. 
 	 * Si l'état est à false il peut se faire manger par le pacman sinon
@@ -24,33 +44,14 @@ public class Fantome {
 	private int vitesse;
 	
 	
-	// FIXME déplacer les définitions des constantes avant celles des attributs
-	
-	
-	/**
-	 * Vitesse par défaut du fantome
-	 */
-	// FIXME respecter les conventions d'écriture
-	private final static int VITESSEINIT = 4;
-	
-	/**
-	 * Position en abscisse par défaut du fantome
-	 */
-	// FIXME respecter les conventions d'écriture
-	private final static int XFINIT = 10;
-	
-	/**
-	 * Position en ordonnée par défaut du fantome
-	 */
-	// FIXME respecter les conventions d'écriture
-	private final static int YFINIT = 6;
+	// FIXME(FIXED) déplacer les définitions des constantes avant celles des attributs
 	
 
 	/**
 	 * Définit le placement du fantôme.
 	 */
-	// FIXME respecter les conventions d'écriture
-	Position PlacementF;
+	// FIXME(FIXED) respecter les conventions d'écriture
+	Position placementF;
 	
 	 
 	/**
@@ -62,7 +63,7 @@ public class Fantome {
 	 */ 
 	public Fantome(){
 		this.vitesse = VITESSEINIT;
-		this.PlacementF = new Position(XFINIT,YFINIT);
+		this.placementF = new Position(XFINIT,YFINIT);
 		this.etat = true;
 	}
 	
