@@ -14,19 +14,19 @@ public class Fantome {
 	/**
 	 * Vitesse par défaut du fantome
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int VITESSEINIT = 4;
 	
 	/**
 	 * Position en abscisse par défaut du fantome
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int XFINIT = 10;
 	
 	/**
 	 * Position en ordonnée par défaut du fantome
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int YFINIT = 6;
 	
 
@@ -43,14 +43,12 @@ public class Fantome {
 	 */
 	private int vitesse;
 	
-	
-	// FIXME(FIXED) déplacer les définitions des constantes avant celles des attributs
+
 	
 
 	/**
 	 * Définit le placement du fantôme.
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
 	Position placementF;
 	
 	 

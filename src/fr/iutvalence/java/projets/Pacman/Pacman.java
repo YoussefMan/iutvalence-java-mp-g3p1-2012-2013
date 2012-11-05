@@ -12,31 +12,30 @@ public class Pacman {
 	/**
 	 * Vitesse initiale du pacman.
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int VITINIT = 10;
 	
 	/**
 	 * Nombre de vie initiale du pacman.
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int NBVIEINIT = 3;
 	
 	/**
 	 * Position en abscisse par défaut du pacman
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int XPINIT = 10;
 	
 	/**
 	 * Position en ordonnée par défaut du pacman
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int YPINIT = 2;
 	 
 	/**
 	 * vitesse du pacman.
 	 */
-	// FIXME(FIXED) la vitesse change t'elle en cours de partie ?
 	private final int vitesse;
 	
 	
@@ -56,7 +55,6 @@ public class Pacman {
 	/**
 	 * Définit le placement du pacman.
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
 	private Position placementPM; 
 	
 	

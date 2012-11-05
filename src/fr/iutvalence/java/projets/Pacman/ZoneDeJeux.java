@@ -16,25 +16,25 @@ public class ZoneDeJeux {
 	/**
 	 * Cet attribut permet de définir le nombre de point que rapporte une bille
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int VALEURSCOREBILLE = 10;
 	
 	/**
 	 * Cet attribut permet de définir le nombre de point que rapporte une gomme on gérera
 	 * le fait que les fontôme change d'état quand une gomme est manger dans l'état de la partie.
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public final static int VALEURSCOREGOMME = 50;
 	
 	
  
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	/**
 	 * On définit à 1 les endroits où les déplacements d'objets sont autorisés
 	 */
 	public final static int ZONEJOUABLE = 1;
 
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	/**
 	 * On définit à 0 les endroits où les déplacements d'objets sont non autorisés
 	 */
@@ -43,14 +43,14 @@ public class ZoneDeJeux {
 	/**
 	 * On définit à 20 la taille maximum de la grille en abscisse.
 	 */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public static final int XMAX = 20;
 
 	/** 
 	 * la taille maximum de la grille en ordonnée.
 	 * 	 
 	 * */
-	// FIXME(FIXED) respecter les conventions d'écriture
+	// FIXME respecter les conventions d'écriture
 	public static final int YMAX = 10;
 
 	/**

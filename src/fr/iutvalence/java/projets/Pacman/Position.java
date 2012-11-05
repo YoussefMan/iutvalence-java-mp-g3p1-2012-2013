@@ -11,13 +11,12 @@ public class Position {
  /**
  * Placement en abscisse de l'objet.
  */
-	// FIXME(FIXED) définir l'attribut private
+
 private int placementx;
 
 /**
  * Placement en ordonnée de l'objet.
  */
-// FIXME(FIXED) définir l'attribut private
 private int placementy;
 
 /**
@@ -45,11 +44,9 @@ public int getY(){
 }
 
 
-// FIXME(FIXED) redéfinir toString
 public String tostring(){
 	return "(" + this.placementx + "," + this.placementy +")";
 }
-// FIXME(FIXED) redéfinir equals et hashCode
 public boolean equals(Object o){
 	if(o == null) 
 		return false;
