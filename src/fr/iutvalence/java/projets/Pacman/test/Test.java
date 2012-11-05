@@ -3,9 +3,10 @@ package fr.iutvalence.java.projets.Pacman.test;
 
 import fr.iutvalence.java.projets.Pacman.ZoneDeJeux;
 
-// FIXME compléter le commentaire
+// FIXME(FIXED) compléter le commentaire
 /**
- * Cette classe de test permet de tester nos classes
+ * Cette classe de test permet de tester nos classes, ici on affiche pour commencer la zone de jeu.
+ * Dans un main on affiche chacune de nos classes.
  * @author elmanssy
  * 
  *

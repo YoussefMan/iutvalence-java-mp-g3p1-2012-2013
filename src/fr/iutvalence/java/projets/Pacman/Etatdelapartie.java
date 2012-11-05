@@ -9,46 +9,42 @@ package fr.iutvalence.java.projets.Pacman;
 // FIXME renommer la classe
 public class Etatdelapartie {
 
-	//FIXME renommer la constante
-	private static final int NBFANTOME = 4;
-	// perso = new Pacman();
-
-	//FIXME duplicata ?
-	private final static int NBFANTOME = 4;
 	
-	
-	// FIXME écrire un commentaire
-	// FIXME initialiser l'attribut dans le constructeur
-	private double timer = 0.1;
-	
-	// FIXME écrire un commentaire
-	// FIXME initialiser de l'attribut dans le constructeur
-	private int nbNiveau = 5;
-
-	// FIXME écrire un commentaire
-	// FIXME respecter les conventions d'écriture
+	private int nombredebillesinit;
 	private int nombredebilles;
-
-	// FIXME écrire un commentaire
+	private int nombredegommesinit;
+	private int nombredegommes;
 	private int score;
 
-	// FIXME écrire un commentaire
-	// FIXME remplacer par un "vrai" constructeur
-	public void initPartie() {
-		
-		// FIXME définir la valeur par défaut sous la forme d'une constante
-		this.nombredebilles = 50;
+	
+	public static void main(String[] args) {
+
+		ZoneDeJeux ZoneTest = new  ZoneDeJeux();
+		this.nombredebilles = ZoneTest.getBilles();
 		this.score = 0;
-	}
-
-	// FIXME écrire un commentaire
-	public Etatdelapartie() {
 		
-		while (perso.vie > 0) {
-
-		}
-
+		
+		Pacman Perso = new Pacman();
+		Fantome F1 = new Fantome();
+		Fantome F2 = new Fantome();
+		
 	}
 
-	// FIXME autres méthodes ?
+    
+
+	
+	
+
+	
+	
+	
+
+
+	
+	
+
+	
+	}
+
+	
 }

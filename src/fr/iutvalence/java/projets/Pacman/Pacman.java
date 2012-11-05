@@ -12,26 +12,26 @@ public class Pacman {
 	/**
 	 * Vitesse initiale du pacman.
 	 */
-	// FIXME respecter les conventions d'écriture
-	public final static int VITINIT = 10;
+	// FIXME(Fixed) respecter les conventions d'écriture
+	public final static int VIT_INIT = 10;
 	
 	/**
 	 * Nombre de vie initiale du pacman.
 	 */
-	// FIXME respecter les conventions d'écriture
-	public final static int NBVIEINIT = 3;
+	// FIXME(Fixed) respecter les conventions d'écriture
+	public final static int NB_VIE_INIT = 3;
 	
 	/**
 	 * Position en abscisse par défaut du pacman
 	 */
-	// FIXME respecter les conventions d'écriture
-	public final static int XPINIT = 10;
+	// FIXME(Fixed) respecter les conventions d'écriture
+	public final static int XP_INIT = 10;
 	
 	/**
 	 * Position en ordonnée par défaut du pacman
 	 */
-	// FIXME respecter les conventions d'écriture
-	public final static int YPINIT = 2;
+	// FIXME(Fixed) respecter les conventions d'écriture
+	public final static int YP_INIT = 9;
 	 
 	/**
 	 * vitesse du pacman.
@@ -66,9 +66,9 @@ public class Pacman {
 	 * 							-et un etat initiliser tout d'abord "peut manger des billes).
 	 */
 	public Pacman(){
-		this.placementPM = new Position(XPINIT,YPINIT);
-	    this.vitesse = VITINIT;
-		this.nbVies = NBVIEINIT;
+		this.placementPM = new Position(XP_INIT,YP_INIT);
+	    this.vitesse = VIT_INIT;
+		this.nbVies = NB_VIE_INIT;
 		this.etat = true;
 	}
 	
@@ -82,7 +82,7 @@ public class Pacman {
 	 */
 	public void mort(){
 		this.etat = false;
-		this.placementPM = new Position(XPINIT,YPINIT);
+		this.placementPM = new Position(XP_INIT,YP_INIT);
 		this.nbVies = this.nbVies -1;
 	}
 	

@@ -14,20 +14,21 @@ public class Fantome {
 	/**
 	 * Vitesse par défaut du fantome
 	 */
-	// FIXME respecter les conventions d'écriture
-	public final static int VITESSEINIT = 4;
+	// FIXME(FIXED) respecter les conventions d'écriture
+	public final static int VITESSE_INIT = 4;
 	
 	/**
 	 * Position en abscisse par défaut du fantome
 	 */
-	// FIXME respecter les conventions d'écriture
-	public final static int XFINIT = 10;
+	// FIXME(FIXED) respecter les conventions d'écriture
+	public final static int XF_INIT = 10;
+	
 	
 	/**
 	 * Position en ordonnée par défaut du fantome
 	 */
-	// FIXME respecter les conventions d'écriture
-	public final static int YFINIT = 6;
+	// FIXME(FIXED) respecter les conventions d'écriture
+	public final static int YF_INIT = 6;
 	
 
 	/**
@@ -60,8 +61,8 @@ public class Fantome {
 	 * 							- et un etat initiliser tout d'abord prédateur.
 	 */ 
 	public Fantome(){
-		this.vitesse = VITESSEINIT;
-		this.placementF = new Position(XFINIT,YFINIT);
+		this.vitesse = VITESSE_INIT;
+		this.placementF = new Position(XF_INIT,YF_INIT);
 		this.etat = true;
 	}
 	
