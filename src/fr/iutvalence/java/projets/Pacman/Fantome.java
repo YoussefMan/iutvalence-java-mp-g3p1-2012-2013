@@ -16,16 +16,6 @@ public class Fantome
 	 */
 	public final static int VITESSE_INIT = 4;
 
-	/**
-	 * Position en abscisse par défaut du fantome
-	 */
-	public final static int XF_INIT = 10;
-
-	/**
-	 * Position en ordonnée par défaut du fantome
-	 */
-
-	public final static int YF_INIT = 6;
 
 	/**
 	 * Permet de savoir si le fantome peut se faire manger ou pas. Si l'état est à false il peut se faire manger par le
@@ -49,10 +39,10 @@ public class Fantome
 	 * base est prédateur. Le fantome créé dispose: - d'une vitesse égale pour tout les fantomes - Une position de base
 	 * sur le plateau de jeu(xF,yF) - et un etat initiliser tout d'abord prédateur.
 	 */
-	public Fantome()
+	public Fantome(int x, int y)
 	{
 		this.vitesse = VITESSE_INIT;
-		this.placementF = new Position(XF_INIT, YF_INIT);
+		this.placementF = new Position(x, y);
 		this.mangeable = true;
 	}
 

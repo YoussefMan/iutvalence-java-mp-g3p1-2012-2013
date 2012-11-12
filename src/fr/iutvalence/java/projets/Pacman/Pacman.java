@@ -72,6 +72,7 @@ public class Pacman
 	{
 		this.enVie = false;
 		this.placementPM = new Position(XP_INIT, YP_INIT);
+		
 		this.nbVies = this.nbVies - 1;
 	}
 
@@ -83,4 +84,8 @@ public class Pacman
 		this.enVie = true;
 	}
 
+	public Position getPosition()
+	{
+		return this.placementPM;
+	}
 }

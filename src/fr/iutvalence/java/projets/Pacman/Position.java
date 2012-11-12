@@ -5,6 +5,10 @@ package fr.iutvalence.java.projets.Pacman;
  * 
  *         Cette classe permet de placer le pacman avec un couple x,y en abscisse ordonnée sur la grille.
  **/
+/**
+ * @author elmanssy
+ *
+ */
 public class Position
 {
 
@@ -48,6 +52,25 @@ public class Position
 	{
 		return placementy;
 	}
+	
+	/**
+	 * c'est le setter pour modifier le x
+	 * @param x
+	 */
+	public void setX(int x)
+	{
+		this.placementx=x;
+	}
+	
+	/**
+	 * c'est le setter pour modifier le y
+	 * @param y
+	 */
+	public void setY(int y)
+	{
+		this.placementy=y;
+	}
+	
 
 	public String tostring()
 	{

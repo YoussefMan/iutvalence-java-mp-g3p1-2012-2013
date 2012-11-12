@@ -18,6 +18,8 @@ public class ZoneDeJeux
 	 */
 	public final static int VALEUR_SCORE_BILLE = 10;
 	
+	public final static int VALEUR_SCORE_BILLE_MANGE = 1;
+	
 	public final static int VALEUR_PACMAN = 20;
 	
 	public final static int VALEUR_FANTOME_1 = 30;
@@ -206,6 +208,16 @@ public class ZoneDeJeux
 		this.grille[1][9] = 0; // On met en place la valeur des gommes.
 		this.grille[1][9] = VALEUR_SCORE_GOMME;
 
+		
+		
+		 // On met en place la valeur de du pacman.
+		this.grille[10][9] = VALEUR_PACMAN;
+		 // On met en place la valeur de du Fantome 1.
+		this.grille[4][1] = VALEUR_FANTOME_1;
+		 // On met en place la valeur de du Fantome 2.
+		this.grille[16][1] = VALEUR_FANTOME_2;
+		
+		
 	}
 
 	/**
@@ -264,6 +276,16 @@ public class ZoneDeJeux
 		return compteur_gomme;
 	}
 
+	public int getValeur(int x,int y)
+	{
+		return this.grille[x][y];
+	}
+	
+	public void setValeur(int x,int y,int valeur)
+	{
+		this.grille[x][y] = valeur;
+	}
+	
 	public String toString()
 	{
 
@@ -272,6 +294,7 @@ public class ZoneDeJeux
 		this.y = 0;
 		int nbbilles;
 		int nbgommes;
+		int valeurR;
 		String result = "Voici la zone de jeu : \n";
 		while (this.y < Y_MAX)
 		{
@@ -287,6 +310,14 @@ public class ZoneDeJeux
 					result += "0";
 				if (this.grille[this.x][this.y] == VALEUR_SCORE_BILLE)
 					result += "o";
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_1)
+					result += "A";
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_2)
+					result += "G";
+				if (this.grille[this.x][this.y] == VALEUR_PACMAN)
+					result += "C";
+				if (this.grille[this.x][this.y] == VALEUR_SCORE_BILLE_MANGE)
+					result += ".";
 				this.x = this.x + 1;
 
 			}
@@ -295,8 +326,11 @@ public class ZoneDeJeux
 		}
 		nbbilles = getBilles();
 		nbgommes = getGommes();
-		result += "il y a " + nbbilles + " billes et " + nbgommes + " gommes";
+		valeurR = getValeur(10,3);
+		result += " il y a " + nbbilles + " billes et " + nbgommes + " gommes \n";
+		result += " la valeur de la case cherché est " + valeurR; 
 		return result;
+		
 	}
 
 }

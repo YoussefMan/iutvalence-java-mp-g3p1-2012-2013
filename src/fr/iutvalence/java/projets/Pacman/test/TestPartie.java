@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.Pacman.test;
 
+import fr.iutvalence.java.projets.Pacman.Partie;
 import fr.iutvalence.java.projets.Pacman.ZoneDeJeux;
 
 /**
@@ -16,7 +17,7 @@ public class TestPartie
 
 	public static void main(String[] args)
 	{
-
+		
 		Partie p = new Partie();
 		p.demarrer();
 	}
