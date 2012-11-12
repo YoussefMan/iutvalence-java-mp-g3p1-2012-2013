@@ -19,6 +19,11 @@ public class ZoneDeJeux {
 	// FIXME(FIXED) respecter les conventions d'écriture
 	public final static int VALEUR_SCORE_BILLE = 10;
 	
+	public final static int VALEUR_PACMAN = 20;
+	
+	public final static int VALEUR_FANTOME_1 = 30;
+	
+	public final static int VALEUR_FANTOME_2 = 35;
 	/**
 	 * Cet attribut permet de définir le nombre de point que rapporte une gomme on gérera
 	 * le fait que les fontôme change d'état quand une gomme est manger dans l'état de la partie.
@@ -203,6 +208,12 @@ public class ZoneDeJeux {
 			
 			this.grille[1][9] = 0; // On met en place la valeur des gommes.
 			this.grille[1][9] =  VALEUR_SCORE_GOMME;
+			
+			// On place les deux fantomes et le pacman 
+			
+			this.grille[3][1] = VALEUR_FANTOME_1;
+			this.grille[17][1] = VALEUR_FANTOME_2;
+			this.grille[10][9] = VALEUR_PACMAN;
 			
 	}
 	

@@ -28,7 +28,7 @@ public class Fantome {
 	 * Position en ordonnée par défaut du fantome
 	 */
 	// FIXME(FIXED) respecter les conventions d'écriture
-	public final static int YF_INIT = 6;
+	public final static int YF_INIT = 1;
 	
 
 	/**
