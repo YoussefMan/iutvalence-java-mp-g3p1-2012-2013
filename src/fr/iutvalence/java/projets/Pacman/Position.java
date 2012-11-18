@@ -77,6 +77,9 @@ public class Position
 		return "(" + this.placementx + "," + this.placementy + ")";
 	}
 
+	/**
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	public boolean equals(Object o)
 	{
 		if (o == null)
@@ -89,6 +92,9 @@ public class Position
 		return (this.placementx == temp.placementx) && (this.placementy == temp.placementy);
 	}
 
+	/**
+	 * @see java.lang.Object#hashCode()
+	 */
 	public int hashCode()
 	{
 		return this.placementx + this.placementy;

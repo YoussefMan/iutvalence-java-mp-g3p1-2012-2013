@@ -2,14 +2,16 @@ package fr.iutvalence.java.projets.Pacman;
 
 import java.util.Random;
 
+// FIXME commentaire
 public class Direction
 {
-
+	// FIXME simplifier en définissant Direction comme une énumération et non une classe (à discuter)
 	public enum Dir
 	{
 		haut,bas,gauche,droite;
 	}
 	
+	// FIXME commentaire
 	public static Dir dirAlea()
 	{
 

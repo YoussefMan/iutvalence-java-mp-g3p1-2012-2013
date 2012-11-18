@@ -1,12 +1,12 @@
 package fr.iutvalence.java.projets.Pacman;
 
-// FIXME compléter le commentaire
+//FIXME compléter le commentaire
 /**
  * 
  * @author elmanssy
  * 
  */
-// FIXME renommer la classe
+//FIXME renommer la classe
 public class Etatdelapartie {
 
 	public final static int NOMBRE_DE_BILLES_INIT = 104;
