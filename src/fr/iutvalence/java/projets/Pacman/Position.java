@@ -1,5 +1,7 @@
 package fr.iutvalence.java.projets.Pacman;
 
+import fr.iutvalence.java.projets.Pacman.Direction.Dir;
+
 /**
  * @author elmanssy
  * 
@@ -37,6 +39,23 @@ public class Position
 		this.placementy = y;
 	}
 
+	public Position translation (Dir d)
+	{
+		if(d == d.haut){
+			return new Position(this.placementx, this.placementy + 1);	
+	}
+		if(d == d.bas){
+			return new Position(this.placementx, this.placementy - 1);	
+	}    
+		if(d == d.droite){
+		return new Position(this.placementx + 1, this.placementy );	
+	}
+		else {
+	return new Position(this.placementx - 1, this.placementy );	
+		}
+		
+	}
+	
 	/**
 	 * Cette méthode renvoit la valeur de x.
 	 */

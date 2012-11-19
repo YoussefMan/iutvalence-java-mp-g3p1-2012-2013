@@ -25,7 +25,6 @@ public class TestZone
 	 */
 	public static void main(String[] args)
 	{
-
 		ZoneDeJeux ZoneTest = new ZoneDeJeux();
 		System.out.println(ZoneTest.toString());
 	}

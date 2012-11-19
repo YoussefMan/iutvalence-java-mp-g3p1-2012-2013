@@ -20,86 +20,115 @@ public class Partie
 	private int nombredegommesinit;
 	private int nombredegommes;
 	private int score;
+	public ZoneDeJeux ZoneTest;
+	private Pacman Perso;
+	private Fantome F1;
+	private Fantome F2;
 
+	
+
+	/**
+	 * Initialisation d'une partie , On positionne les pacmans, 
+	 * et les fantomes sur la mini map, On inisialise le score ainsi que le bnombre de bille
+	 */
 	public Partie()
 	{
 
-		ZoneDeJeux ZoneTest = new ZoneDeJeux();
-		this.nombredebilles = ZoneTest.getBilles();
+		this.ZoneTest = new ZoneDeJeux();
+		this.nombredebilles = this.ZoneTest.getBilles();
 		this.score = 0;
-		Pacman Perso = new Pacman();
-		Fantome F1 = new Fantome(4,1);
-		Fantome F2 = new Fantome(16,1);
+		this.Perso = new Pacman();
+		this.F1 = new Fantome(4,1);
+		this.F2 = new Fantome(16,1);
 		
 	}
 
+	/**
+	 * Une Methode demarrer qui execute une partie
+	 */
 	public void demarrer()
 	{  
+		Dir test = Direction.dirAlea();
+		Position trans;
+		trans = this.Perso.getPosition().translation(test);
+		if(this.ZoneTest.getValeur(trans.getX(),trans.getY()) != 0){
+			this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+			this.Perso.getPosition().setX(trans.getX());
+			this.Perso.getPosition().setY(trans.getY());
+			this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
+		}
+		
+		/*
 		
 		int Position;
-		Pacman Perso = new Pacman();
-		ZoneDeJeux ZoneTest = new ZoneDeJeux();
-		ZoneTest.toString();
+		this.ZoneTest.toString();
 		Dir test;
 		test = Direction.dirAlea();
 		
 		// HAUT
 		
 		if ( test == test.haut) {
-			Position =  Perso.getPosition().getY() + 1;
+			Position =  this.Perso.getPosition().getY() + 1;
 		
 				
-			if(ZoneTest.getValeur(Perso.getPosition().getX(),Position) != 0){
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				Perso.getPosition().setY(Perso.getPosition().getY()+1);
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_PACMAN);
+			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX(),Position) != 0){
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+				this.Perso.getPosition().setY(this.Perso.getPosition().getY()+1);
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
 			}
 		}
 		
 	// Bas
 		
 		if ( test == test.bas) {
-			Position =  Perso.getPosition().getY() - 1;
+			Position =  this.Perso.getPosition().getY() - 1;
 		
 				
-			if(ZoneTest.getValeur(Perso.getPosition().getX(),Position) != 0){
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				Perso.getPosition().setY(Perso.getPosition().getY()- 1);
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_PACMAN);
+			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX(),Position) != 0){
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+				this.Perso.getPosition().setY(this.Perso.getPosition().getY()- 1);
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
 			}
 		}
 		
 	// Gauche
 		
 		if ( test == test.gauche) {
-			Position =  Perso.getPosition().getX() - 1;
+			Position =  this.Perso.getPosition().getY();
 		
 				
-			if(ZoneTest.getValeur(Perso.getPosition().getX(),Position) != 0){
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				Perso.getPosition().setX(Perso.getPosition().getX()-1);
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_PACMAN);
+			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX()-1,Position) != 0){
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+				this.Perso.getPosition().setX(this.Perso.getPosition().getX()-1);
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
 			}
 		}
 		
 	// Droite
 		
 		if ( test == test.droite) {
-			Position =  Perso.getPosition().getX() + 1;
+			Position =  this.Perso.getPosition().getY();
 		
 				
-			if(ZoneTest.getValeur(Perso.getPosition().getX(),Position) != 0){
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				Perso.getPosition().setX(Perso.getPosition().getX()+1);
-				ZoneTest.setValeur(Perso.getPosition().getX(), Perso.getPosition().getY(),ZoneTest.VALEUR_PACMAN);
+			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX()+1,Position) != 0){
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+				this.Perso.getPosition().setX(this.Perso.getPosition().getX()+1);
+				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
 			}
 		}
 		
-		ZoneTest.toString();
+	
 		
 	}
 	
+	/*
+	  public int getScore( ZoneDeJeux ZoneTest ) {
+		  int res = 0 ;
+		  res = (NOMBRE_DE_BILLES_INIT - nombredebilles)* ZoneTest.VALEUR_SCORE_BILLE+( NOMBRE_DE_GOMMES_INIT - nombredegommes )* ZoneTest.VALEUR_SCORE_GOMME;
+		 return res;
+	  }
 	
+	*/
 	
-	
+}
 }

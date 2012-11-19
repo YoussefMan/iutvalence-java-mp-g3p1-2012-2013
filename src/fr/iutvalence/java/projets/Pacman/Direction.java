@@ -14,7 +14,7 @@ public class Direction
 	{
 
 		Random rnd = new Random();
-		int r = rnd.nextInt(3);
+		int r = rnd.nextInt(4);
 		switch(r)
 		{
 		case 0 : return Dir.haut;
