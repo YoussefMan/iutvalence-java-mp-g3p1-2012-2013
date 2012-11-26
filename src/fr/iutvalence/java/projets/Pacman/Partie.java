@@ -8,8 +8,8 @@ import fr.iutvalence.java.projets.Pacman.Direction.Dir;
  * @author elmanssy
  * 
  */
-// FIXME ne pas mettre de main dans cette classe, mais une méthode "demarrer" qui execute une partie
-// FIXME pour l'instant, implémenter un comportement simple où pacman se déplace seul avec une décision de déplacement
+// FIXME (FIXED) ne pas mettre de main dans cette classe, mais une méthode "demarrer" qui execute une partie
+// FIXME (FIXED) pour l'instant, implémenter un comportement simple où pacman se déplace seul avec une décision de déplacement
 // aléatoire (à discuter)
 
 public class Partie
@@ -48,76 +48,64 @@ public class Partie
 	 */
 	public void demarrer()
 	{  
-		Dir test = Direction.dirAlea();
-		Position trans;
-		trans = this.Perso.getPosition().translation(test);
-		if(this.ZoneTest.getValeur(trans.getX(),trans.getY()) != 0){
+		Dir testPacMan = Direction.dirAlea();
+		Dir testF1 = Direction.dirAlea();
+		Dir testF2 = Direction.dirAlea();
+		Position transPacman;
+		Position transF1;
+		Position transF2;
+		
+		//Deplacement du PacMan
+		transPacman = this.Perso.getPosition().translation(testPacMan);
+		if(this.ZoneTest.getValeur(transPacman.getX(),transPacman.getY()) != 0){
+			
 			this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-			this.Perso.getPosition().setX(trans.getX());
-			this.Perso.getPosition().setY(trans.getY());
+			this.Perso.getPosition().setX(transPacman.getX());
+			this.Perso.getPosition().setY(transPacman.getY());
 			this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
 		}
+		//Deplacement du premier fantome
+		transF1  = this.F1.getPosition().translation(testF1);
+		if(this.ZoneTest.getValeur(transF1.getX(),transF1.getY()) != 0){
+		  if((this.ZoneTest.getValeur(this.F1.getPosition().getX() - transF1.getX(),this.F1.getPosition().getY() - transF1.getY()) == this.ZoneTest.VALEUR_FANTOME_1)){
+			  this.ZoneTest.setValeur(this.F1.getPosition().getX() - transF1.getX(), this.F1.getPosition().getY() - transF1.getY() ,this.ZoneTest.VALEUR_SCORE_BILLE);
+		  }
+		  if((this.ZoneTest.getValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE)){
+			  this.ZoneTest.setValeur(this.F1.getPosition().getX()- transF1.getX(), this.F1.getPosition().getY()  - transF1.getY() ,this.ZoneTest.VALEUR_SCORE_BILLE);
+		  }
+		  if((this.ZoneTest.getValeur(this.F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE_MANGE)){
+			  this.ZoneTest.setValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+		  }
+		  if((this.ZoneTest.getValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY()) == this.ZoneTest.VALEUR_SCORE_GOMME)){
+			  this.ZoneTest.setValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+		  }
+			this.F1.getPosition().setX(transF1.getX());
+			this.F1.getPosition().setY(transF1.getY());
+			this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_1);
+			
+		} 
 		
-		/*
-		
-		int Position;
-		this.ZoneTest.toString();
-		Dir test;
-		test = Direction.dirAlea();
-		
-		// HAUT
-		
-		if ( test == test.haut) {
-			Position =  this.Perso.getPosition().getY() + 1;
-		
-				
-			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX(),Position) != 0){
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				this.Perso.getPosition().setY(this.Perso.getPosition().getY()+1);
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
-			}
+		//Deplacement du deuxieme fantome
+		transF2  = this.F2.getPosition().translation(testF2);
+		if(this.ZoneTest.getValeur(transF2.getX(),transF2.getY()) != 0){
+			 if((this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_FANTOME_2)){
+				  this.ZoneTest.setValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY(),this.ZoneTest.VALEUR_SCORE_BILLE);
+			  }
+			  if(this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE){
+				  this.ZoneTest.setValeur( F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY(),this.ZoneTest.VALEUR_SCORE_BILLE);
+			  }
+			  if((this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE_MANGE)){
+				  this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+			  }
+			  if((this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_SCORE_GOMME)){
+				  this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+			  }
+			
+			this.F2.getPosition().setX(transF2.getX());
+			this.F2.getPosition().setY(transF2.getY());
+			this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_2);
 		}
 		
-	// Bas
-		
-		if ( test == test.bas) {
-			Position =  this.Perso.getPosition().getY() - 1;
-		
-				
-			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX(),Position) != 0){
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				this.Perso.getPosition().setY(this.Perso.getPosition().getY()- 1);
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
-			}
-		}
-		
-	// Gauche
-		
-		if ( test == test.gauche) {
-			Position =  this.Perso.getPosition().getY();
-		
-				
-			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX()-1,Position) != 0){
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				this.Perso.getPosition().setX(this.Perso.getPosition().getX()-1);
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
-			}
-		}
-		
-	// Droite
-		
-		if ( test == test.droite) {
-			Position =  this.Perso.getPosition().getY();
-		
-				
-			if(this.ZoneTest.getValeur(this.Perso.getPosition().getX()+1,Position) != 0){
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-				this.Perso.getPosition().setX(this.Perso.getPosition().getX()+1);
-				this.ZoneTest.setValeur(this.Perso.getPosition().getX(), this.Perso.getPosition().getY(),this.ZoneTest.VALEUR_PACMAN);
-			}
-		}
-		
-	
 		
 	}
 	
@@ -130,5 +118,5 @@ public class Partie
 	
 	*/
 	
-}
+	
 }

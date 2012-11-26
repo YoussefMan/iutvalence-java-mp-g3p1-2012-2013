@@ -63,5 +63,14 @@ public class Fantome
 	{
 		this.mangeable = false;
 	}
+	
+	/**
+	 * Cette méthode retourne la position du fantome.
+	 * @return
+	 */
+	public Position getPosition()
+	{
+		return this.placementF;
+	}
 
 }
