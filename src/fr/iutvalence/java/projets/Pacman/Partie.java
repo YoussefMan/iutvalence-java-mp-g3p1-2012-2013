@@ -39,6 +39,8 @@ public class Partie
 		ZoneDeJeux ZoneTest = new ZoneDeJeux();
 		this.nombredebilles = ZoneTest.getBilles();
 		this.score = 0;
+		
+		// FIXME attention : ici ce sont des valriables LOCALES, perdues à la sortie du constructeur 
 		Pacman Perso = new Pacman();
 		Fantome F1 = new Fantome(4, 1);
 		Fantome F2 = new Fantome(16, 1);

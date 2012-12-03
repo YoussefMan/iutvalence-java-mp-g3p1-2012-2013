@@ -71,7 +71,7 @@ public class Position
 		this.placementy=y;
 	}
 	
-
+	// FIXME ce n'est pas la redéfinition de toString()
 	public String tostring()
 	{
 		return "(" + this.placementx + "," + this.placementy + ")";
