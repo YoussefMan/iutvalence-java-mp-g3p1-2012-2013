@@ -28,6 +28,8 @@ public class Fantome
 	 * Vitesse du fantome.
 	 */
 	private int vitesse;
+	
+	private 
 
 	/**
 	 * Définit le placement du fantôme.
@@ -43,6 +45,7 @@ public class Fantome
 	{
 		this.vitesse = VITESSE_INIT;
 		this.placementF = new Position(x, y);
+		
 		this.mangeable = true;
 	}
 

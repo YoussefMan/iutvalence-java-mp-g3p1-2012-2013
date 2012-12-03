@@ -24,7 +24,7 @@ public class TestPartie
 		while(i == 1){
 		p.demarrer();
 		System.out.println(p.ZoneTest.toString());
-		/*try
+		try
 		{
 			Thread.sleep(100);
 		}
@@ -33,7 +33,7 @@ public class TestPartie
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		}*/
+		}
 	}
 	}
-}
+

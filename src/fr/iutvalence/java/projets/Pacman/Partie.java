@@ -39,8 +39,9 @@ public class Partie
 		this.score = 0;
 		this.Perso = new Pacman();
 		this.F1 = new Fantome(4,1);
+		this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_1_BILLE);
 		this.F2 = new Fantome(16,1);
-		
+		this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_2_BILLE);
 	}
 
 	/**
@@ -66,46 +67,96 @@ public class Partie
 		}
 		//Deplacement du premier fantome
 		transF1  = this.F1.getPosition().translation(testF1);
-		if(this.ZoneTest.getValeur(transF1.getX(),transF1.getY()) != 0){
-		  if((this.ZoneTest.getValeur(this.F1.getPosition().getX() - transF1.getX(),this.F1.getPosition().getY() - transF1.getY()) == this.ZoneTest.VALEUR_FANTOME_1)){
-			  this.ZoneTest.setValeur(this.F1.getPosition().getX() - transF1.getX(), this.F1.getPosition().getY() - transF1.getY() ,this.ZoneTest.VALEUR_SCORE_BILLE);
-		  }
-		  if((this.ZoneTest.getValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE)){
-			  this.ZoneTest.setValeur(this.F1.getPosition().getX()- transF1.getX(), this.F1.getPosition().getY()  - transF1.getY() ,this.ZoneTest.VALEUR_SCORE_BILLE);
-		  }
-		  if((this.ZoneTest.getValeur(this.F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE_MANGE)){
-			  this.ZoneTest.setValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-		  }
-		  if((this.ZoneTest.getValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY()) == this.ZoneTest.VALEUR_SCORE_GOMME)){
-			  this.ZoneTest.setValeur(F1.getPosition().getX()- transF1.getX(),F1.getPosition().getY()- transF1.getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
-		  }
-			this.F1.getPosition().setX(transF1.getX());
-			this.F1.getPosition().setY(transF1.getY());
-			this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_1);
+		Position beforeT1 = this.F1.getPosition();
+			if(this.ZoneTest.getValeur(transF1.getX(),transF1.getY()) != 0){
+				if(this.ZoneTest.getValeur(transF1.getX(),transF1.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE){
+					if(this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_BILLE){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE);						
+					}
+					else if (this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_VIDE){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+					}
+					else if (this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_GOMME){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+					}
+					this.F1.getPosition().setX(transF1.getX());
+					this.F1.getPosition().setY(transF1.getY());
+					this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_1_BILLE);
+				}
+				else if(this.ZoneTest.getValeur(transF1.getX(),transF1.getY()) == this.ZoneTest.VALEUR_SCORE_GOMME){
+					if(this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_BILLE){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE);						
+					}
+					else if (this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_VIDE){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+					}
+					else if (this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_GOMME){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+					}
+					this.F1.getPosition().setX(transF1.getX());
+					this.F1.getPosition().setY(transF1.getY());
+					this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_1_GOMME);
+				}
+				else if(this.ZoneTest.getValeur(transF1.getX(),transF1.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE_MANGE){
+					if(this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_BILLE){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE);						
+					}
+					else if (this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_VIDE){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+					}
+					else if (this.ZoneTest.getValeur(beforeT1.getX(),beforeT1.getY()) == this.ZoneTest.VALEUR_FANTOME_1_GOMME){
+						this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+					}
+					this.F1.getPosition().setX(transF1.getX());
+					this.F1.getPosition().setY(transF1.getY());
+					this.ZoneTest.setValeur(this.F1.getPosition().getX(), this.F1.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_1_VIDE);
+				}
 			
-		} 
-		
-		//Deplacement du deuxieme fantome
-		transF2  = this.F2.getPosition().translation(testF2);
-		if(this.ZoneTest.getValeur(transF2.getX(),transF2.getY()) != 0){
-			 if((this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_FANTOME_2)){
-				  this.ZoneTest.setValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY(),this.ZoneTest.VALEUR_SCORE_BILLE);
-			  }
-			  if(this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE){
-				  this.ZoneTest.setValeur( F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY(),this.ZoneTest.VALEUR_SCORE_BILLE);
-			  }
-			  if((this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE_MANGE)){
-				  this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
-			  }
-			  if((this.ZoneTest.getValeur(F2.getPosition().getX()- transF2.getX(),F2.getPosition().getY()- transF2.getY()) == this.ZoneTest.VALEUR_SCORE_GOMME)){
-				  this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
-			  }
-			
-			this.F2.getPosition().setX(transF2.getX());
-			this.F2.getPosition().setY(transF2.getY());
-			this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_2);
-		}
-		
+				transF2  = this.F2.getPosition().translation(testF2);
+				Position beforeT2 = this.F2.getPosition();
+					if(this.ZoneTest.getValeur(transF2.getX(),transF2.getY()) != 0){
+						if(this.ZoneTest.getValeur(transF2.getX(),transF2.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE){
+							if(this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_BILLE){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE);						
+							}
+							else if (this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_VIDE){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+							}
+							else if (this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_GOMME){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+							}
+							this.F2.getPosition().setX(transF2.getX());
+							this.F2.getPosition().setY(transF2.getY());
+							this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_2_BILLE);
+						}
+						else if(this.ZoneTest.getValeur(transF2.getX(),transF2.getY()) == this.ZoneTest.VALEUR_SCORE_GOMME){
+							if(this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_BILLE){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE);						
+							}
+							else if (this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_VIDE){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+							}
+							else if (this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_GOMME){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+							}
+							this.F2.getPosition().setX(transF2.getX());
+							this.F2.getPosition().setY(transF2.getY());
+							this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_2_GOMME);
+						}
+						else if(this.ZoneTest.getValeur(transF2.getX(),transF2.getY()) == this.ZoneTest.VALEUR_SCORE_BILLE_MANGE){
+							if(this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_BILLE){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE);						
+							}
+							else if (this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_VIDE){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_BILLE_MANGE);
+							}
+							else if (this.ZoneTest.getValeur(beforeT2.getX(),beforeT2.getY()) == this.ZoneTest.VALEUR_FANTOME_2_GOMME){
+								this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_SCORE_GOMME);
+							}
+							this.F2.getPosition().setX(transF2.getX());
+							this.F2.getPosition().setY(transF2.getY());
+							this.ZoneTest.setValeur(this.F2.getPosition().getX(), this.F2.getPosition().getY(),this.ZoneTest.VALEUR_FANTOME_2_VIDE);
+						}
 		
 	}
 	
@@ -119,4 +170,4 @@ public class Partie
 	*/
 	
 	
-}
+}}}

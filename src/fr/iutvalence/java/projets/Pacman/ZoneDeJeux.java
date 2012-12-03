@@ -22,9 +22,13 @@ public class ZoneDeJeux
 	
 	public final static int VALEUR_PACMAN = 20;
 	
-	public final static int VALEUR_FANTOME_1 = 30;
+	public final static int VALEUR_FANTOME_1_BILLE = 40;
+	public final static int VALEUR_FANTOME_1_VIDE = 31;
+	public final static int VALEUR_FANTOME_1_GOMME = 80;
 	
-	public final static int VALEUR_FANTOME_2 = 35;
+	public final static int VALEUR_FANTOME_2_BILLE = 45;
+	public final static int VALEUR_FANTOME_2_VIDE = 36;
+	public final static int VALEUR_FANTOME_2_GOMME = 85;
 
 	/**
 	 * Cet attribut permet de définir le nombre de point que rapporte une gomme on gérera le fait que les fontôme change
@@ -213,9 +217,9 @@ public class ZoneDeJeux
 		 // On met en place la valeur de du pacman.
 		this.grille[10][9] = VALEUR_PACMAN;
 		 // On met en place la valeur de du Fantome 1.
-		this.grille[4][1] = VALEUR_FANTOME_1;
+		//this.grille[4][1] = VALEUR_FANTOME_1;
 		 // On met en place la valeur de du Fantome 2.
-		this.grille[16][1] = VALEUR_FANTOME_2;
+		//this.grille[16][1] = VALEUR_FANTOME_2;
 		
 		
 	}
@@ -240,7 +244,11 @@ public class ZoneDeJeux
 
 				if (this.grille[this.x][this.y] == VALEUR_SCORE_BILLE)
 					compteur_bille++;
-
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_2_BILLE)
+					compteur_bille++;
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_1_BILLE)
+					compteur_bille++;
+			
 				this.x++;
 			}
 			x = 0;
@@ -267,6 +275,10 @@ public class ZoneDeJeux
 			{
 
 				if (this.grille[this.x][this.y] == VALEUR_SCORE_GOMME)
+					compteur_gomme++;
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_2_GOMME)
+					compteur_gomme++;
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_1_GOMME)
 					compteur_gomme++;
 				this.x++;
 			}
@@ -310,9 +322,17 @@ public class ZoneDeJeux
 					result += "0";
 				if (this.grille[this.x][this.y] == VALEUR_SCORE_BILLE)
 					result += "o";
-				if (this.grille[this.x][this.y] == VALEUR_FANTOME_1)
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_1_GOMME)
 					result += "A";
-				if (this.grille[this.x][this.y] == VALEUR_FANTOME_2)
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_1_VIDE)
+					result += "A";
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_1_BILLE)
+					result += "A";
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_2_BILLE)
+					result += "G";
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_2_VIDE)
+					result += "G";
+				if (this.grille[this.x][this.y] == VALEUR_FANTOME_2_GOMME)
 					result += "G";
 				if (this.grille[this.x][this.y] == VALEUR_PACMAN)
 					result += "C";
