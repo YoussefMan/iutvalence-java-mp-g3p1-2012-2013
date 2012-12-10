@@ -16,26 +16,39 @@ import fr.iutvalence.java.projets.Pacman.Direction.Dir;
 
 public class Partie
 {
-	// FIXME commentaire
-	// FIXME respecter les conventions d'écriture
-	private int nombredebillesinit;
+	// FIXME(FIXED) commentaire
+	// FIXME (FIXED) respecter les conventions d'écriture
+	/**
+	 * Nombre de billes initales
+	 */
+	private int nombreDeBillesInit;
 
-	// FIXME commentaire
-	// FIXME respecter les conventions d'écriture
-	private int nombredebilles;
+	// FIXME (FIXED)commentaire
+	// FIXME (FIXED)respecter les conventions d'écriture
+	/*
+	 * Nombre de billes restantes.
+	 */
+	private int nombreDeBilles;
 
-	// FIXME commentaire
-	// FIXME respecter les conventions d'écriture
-	private int nombredegommesinit;
+	// FIXME(FIXED) commentaire
+	// FIXME (FIXED)respecter les conventions d'écriture
+	/*
+	 * Nombre de gommes initiales
+	 */
+	private int nombreDeGommesInit;
 
 	
-	// FIXME commentaire
-	// FIXME respecter les conventions d'écriture
-	private int nombredegommes;
+	// FIXME (FIXED)àcommentaire
+	// FIXME (FIXED)respecter les conventions d'écriture
+	private int nombreDeGommes;
 	
 	
-	// FIXME commentaire
+	// FIXME (FIXED)commentaire
 	// FIXME respecter les conventions d'écriture
+	/*
+	 * Dans l'ordre : Le score en cours, la zone de jeu, le pacman et les deux fantomes.
+	 * 
+	 */
 	private int score;
 	public ZoneDeJeux ZoneTest;
 	private Pacman Perso;
@@ -50,13 +63,15 @@ public class Partie
 	 * et les fantomes sur la mini map, On inisialise le score ainsi que le bnombre de bille
 	 */
 
-	// FIXME commentaire
+	// FIXME (FIXED)commentaire
 
+	
+	
 	public Partie()
 	{
 
 		this.ZoneTest = new ZoneDeJeux();
-		this.nombredebilles = this.ZoneTest.getBilles();
+		this.nombreDeBilles = this.ZoneTest.getBilles();
 		this.score = 0;
 		this.Perso = new Pacman();
 		this.F1 = new Fantome(4,1);
@@ -79,7 +94,7 @@ public class Partie
 	 * Une Methode demarrer qui execute une partie
 	 */
 
-	// FIXME commentaire
+	// FIXME (FIXED)commentaire
 
 	public void demarrer()
 
