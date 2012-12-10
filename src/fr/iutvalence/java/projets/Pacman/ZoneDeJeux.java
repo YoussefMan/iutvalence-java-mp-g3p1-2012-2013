@@ -16,35 +16,35 @@ public class ZoneDeJeux
 	/**
 	 * Cet attribut permet de définir le nombre de point que rapporte une bille
 	 */
-	public final static int VALEUR_SCORE_BILLE = 10;
+	public final int VALEUR_SCORE_BILLE = 10;
 	
-	public final static int VALEUR_SCORE_BILLE_MANGE = 1;
+	public final int VALEUR_SCORE_BILLE_MANGE = 1;
 	
-	public final static int VALEUR_PACMAN = 20;
+	public final int VALEUR_PACMAN = 20;
 	
-	public final static int VALEUR_FANTOME_1_BILLE = 40;
-	public final static int VALEUR_FANTOME_1_VIDE = 31;
-	public final static int VALEUR_FANTOME_1_GOMME = 80;
+	public final  int VALEUR_FANTOME_1_BILLE = 40;
+	public final  int VALEUR_FANTOME_1_VIDE = 31;
+	public final  int VALEUR_FANTOME_1_GOMME = 80;
 	
-	public final static int VALEUR_FANTOME_2_BILLE = 45;
-	public final static int VALEUR_FANTOME_2_VIDE = 36;
-	public final static int VALEUR_FANTOME_2_GOMME = 85;
+	public final  int VALEUR_FANTOME_2_BILLE = 45;
+	public final  int VALEUR_FANTOME_2_VIDE = 36;
+	public final  int VALEUR_FANTOME_2_GOMME = 85;
 
 	/**
 	 * Cet attribut permet de définir le nombre de point que rapporte une gomme on gérera le fait que les fontôme change
 	 * d'état quand une gomme est manger dans l'état de la partie.
 	 */
-	public final static int VALEUR_SCORE_GOMME = 50;
+	public final int VALEUR_SCORE_GOMME = 50;
 
 	/**
 	 * On définit à 1 les endroits où les déplacements d'objets sont autorisés
 	 */
-	public final static int ZONE_JOUABLE = 1;
+	public final int ZONE_JOUABLE = 1;
 
 	/**
 	 * On définit à 0 les endroits où les déplacements d'objets sont non autorisés
 	 */
-	public final static int ZONE_NON_JOURABLE = 0;
+	public final int ZONE_NON_JOURABLE = 0;
 
 	/**
 	 * On définit à 20 la taille maximum de la grille en abscisse.

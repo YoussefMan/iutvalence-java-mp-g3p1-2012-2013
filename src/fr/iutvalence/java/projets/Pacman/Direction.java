@@ -2,14 +2,24 @@ package fr.iutvalence.java.projets.Pacman;
 
 import java.util.Random;
 
+// FIXME(FIXED) commentaire
+/**
+ * La classe direction permet de définir aleatoirement une direction(haut, bas,gauche,droite).
+ * @author elmanssy
+ *
+ */
 public class Direction
 {
-
+	//FIXMEFIXED)  simplifier en définissant Direction comme une énumération et non une classe (à discuter)
 	public enum Dir
 	{
 		haut,bas,gauche,droite;
 	}
 	
+	// FIXME(FIXED) commentaire
+	/**les driections aléatoires sont définis à l'aide d'un random jusqu'à 4.
+	 * @return
+	 */
 	public static Dir dirAlea()
 	{
 
