@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class Direction
 {
-	//FIXMEFIXED)  simplifier en définissant Direction comme une énumération et non une classe (à discuter)
+	//FIXME(FIXED)  simplifier en définissant Direction comme une énumération et non une classe (à discuter)
 	public enum Dir
 	{
 		haut,bas,gauche,droite;

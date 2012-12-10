@@ -45,7 +45,6 @@ public class Fantome
 	{
 		this.vitesse = VITESSE_INIT;
 		this.placementF = new Position(x, y);
-	
 		this.mangeable = true;
 	}
 

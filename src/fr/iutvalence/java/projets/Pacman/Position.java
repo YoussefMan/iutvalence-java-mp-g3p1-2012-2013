@@ -41,13 +41,13 @@ public class Position
 
 	public Position translation (Dir d)
 	{
-		if(d == d.haut){
+		if(d == Dir.haut){
 			return new Position(this.placementx, this.placementy + 1);	
 	}
-		if(d == d.bas){
+		if(d == Dir.bas){
 			return new Position(this.placementx, this.placementy - 1);	
 	}    
-		if(d == d.droite){
+		if(d == Dir.droite){
 		return new Position(this.placementx + 1, this.placementy );	
 	}
 		else {
